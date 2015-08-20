@@ -27,7 +27,7 @@
                 templateUrl: 'modules/core/layout/views/container_header.html',
             },
             'header@container_header': {
-                template: 'HEADER-DEFAULT'
+                template: '<navbar></navbar>'
             }
           }
         };

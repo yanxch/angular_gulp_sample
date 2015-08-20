@@ -1,0 +1,35 @@
+<nav>
+  <div class="nav-wrapper">
+
+    <div class="portal-menu">
+      <a href="#!" class="nav-logo" data-activates="nav-menu-collapse">Your Application Rocks</a>
+    </div>
+
+    <ul id="nav-menu-collapse" class="dropdown-content">
+      <li ng-repeat="entry in vm.entries" ng-class="{ 'active' : vm.isActiveTab(entry) ? true : false }">
+        <a href="{{ entry.href }}" ng-click="vm.click(entry)"><i class="material-icons left">{{ entry.icon }}</i>{{ entry.name }}</a>
+      </li>
+    </ul>
+
+    <div class="nav-menu">
+      <ul>
+        <li ng-repeat="entry in vm.entries" ng-class="{ 'active' :  vm.isActiveTab(entry) ? true : false }">
+          <a href="{{ entry.href }}" ng-click="vm.click(entry)"><i class="material-icons left">{{ entry.icon }}</i>{{ entry.name }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="nav-user">
+        <a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons left">person_pin</i>
+          <span class="left">{{ vm.username }}</span>
+          <i class="material-icons right">arrow_drop_down</i>
+        </a>
+      </li>
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#/meineStellvertreter">Meine Stellvertreter</a></li>
+        <li><a href="#/zuStellvertretende">Zu Stellvertretende</a></li>
+        <li><a href="#/login" ng-click="vm.logout()">Abmelden</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
