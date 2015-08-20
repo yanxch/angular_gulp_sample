@@ -1,0 +1,141 @@
+(function () {
+  'use strict';
+
+  angular.module('app', [
+    /*
+     * Everybody has access to these.
+     * We could place these under every feature area,
+     * but this is easier to maintain.
+     */
+    'app.core',
+
+    /*
+     * Use Case Modules
+     */
+    'app.home'
+
+  ]);
+})();
+
+(function () {
+  'use strict';
+
+  angular.module('app.core', [
+    
+    'ui.router'
+    
+  ]);
+  
+})();
+
+(function () {
+  'use strict';
+
+  angular.module('app.home', []);
+  
+})();
+
+(function () {
+  'use strict';
+
+  angular
+    .module('app.home')
+    .config(HomeRouter);
+
+  /*@ngInject*/
+  function HomeRouter($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.when('', '/home');
+    $urlRouterProvider.when('/', '/home');
+    
+    $stateProvider
+      .state('container_header.home', homeLayout());
+      
+      function homeLayout() {
+        return  {
+          url: '/home',
+          views: {
+            'content@container_header': {
+              templateUrl: 'modules/home/views/home.html',
+              controller: 'HomeController',
+              controllerAs: 'vm'
+            }
+          }
+        };
+      }
+  }
+
+})();
+
+(function () {
+    'use strict';
+
+    angular
+        .module('app.home')
+        .controller('HomeController', HomeController);
+
+
+    /*@ngInject*/
+    function HomeController() {
+        var vm = this;
+		vm.test = 'Test output';
+        console.log('Hermann');
+    }
+	
+})();
+
+(function () {
+  'use strict';
+
+  angular
+    .module('app.core')
+    .config(LayoutRouter);
+
+  /*@ngInject*/
+  function LayoutRouter($stateProvider) {
+    $stateProvider
+      .state('container', containerLayout())
+      .state('container_header', containerHeaderLayout())
+      .state('container_header_sidebar', containerHeaderSidebarLayout());
+      
+      function containerLayout(){
+        return {
+          abstract: true,
+          templateUrl: 'modules/core/layout/views/container.html'
+        };
+      } 
+      
+      function containerHeaderLayout() {
+        return {
+          views: {
+            '': {
+                abstract: true,
+                templateUrl: 'modules/core/layout/views/container_header.html',
+            },
+            'header@container_header': {
+                template: 'HEADER-DEFAULT'
+            }
+          }
+        };
+      }
+      
+      function containerHeaderSidebarLayout() { 
+        return {
+          views: {
+            '': {
+                abstract: true,
+                templateUrl: 'modules/core/layout/views/container_header_sidebar.html'
+            },
+            'header@container_header_sidebar': {
+                template: 'HEADER-DEFAULT'
+            },
+            'sidebar@container_header_sidebar': {
+                template: 'SIDEBAR-DEFAULT'
+            }  
+          }
+        };
+      }
+  }
+
+})();
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5qcyIsImNvcmUvY29yZS5tb2R1bGUuanMiLCJob21lL2hvbWUubW9kdWxlLmpzIiwiaG9tZS9jb25maWcvaG9tZS5yb3V0ZXIuanMiLCJob21lL2NvbnRyb2xsZXIvaG9tZS5jb250cm9sbGVyLmpzIiwiY29yZS9sYXlvdXQvY29uZmlnL2xheW91dC5yb3V0ZXIuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUNsQkE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQ1ZBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FDTkE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUM5QkE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQ2hCQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsImZpbGUiOiJzY3JpcHRzLmpzIiwic291cmNlUm9vdCI6Ii9tb2R1bGVzIn0=

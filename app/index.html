@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- build:remove -->
+    <base href="/">
+    <!-- endbuild -->
+
+    <!-- build:css assets/css/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="assets/bower/toastr/toastr.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css assets/css/styles.css -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- endbuild -->
+
+    <title>Sample Angular application with gulp</title>
+</head>
+<body ng-app="app">
+    
+    <ui-view></ui-view>
+
+<!-- build:js assets/js/vendor.js -->
+<!-- bower:js -->
+<script src="assets/bower/jquery/dist/jquery.js"></script>
+<script src="assets/bower/angular/angular.js"></script>
+<script src="assets/bower/angular-sanitize/angular-sanitize.js"></script>
+<script src="assets/bower/angular-resource/angular-resource.js"></script>
+<script src="assets/bower/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="assets/bower/toastr/toastr.js"></script>
+<script src="assets/bower/moment/moment.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js(.tmp) assets/js/scripts.js -->
+<script src="assets/js/scripts.js"></script>
+<!-- endbuild -->
+</body>
+</html>
