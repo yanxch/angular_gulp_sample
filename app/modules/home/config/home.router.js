@@ -11,13 +11,13 @@
     $urlRouterProvider.when('/', '/home');
     
     $stateProvider
-      .state('container_header.home', homeLayout());
+      .state('container_header_sidebar.home', homeLayout());
       
       function homeLayout() {
         return  {
           url: '/home',
           views: {
-            'content@container_header': {
+            'content@container_header_sidebar': {
               templateUrl: 'modules/home/views/home.html',
               controller: 'HomeController',
               controllerAs: 'vm'

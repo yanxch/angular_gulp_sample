@@ -1,0 +1,14 @@
+<div class="side-nav fixed">
+    <ul class="side-menu">
+        <li ng-repeat="item in ::vm.items" class="parent-list-item" ui-sref-active="active" ng-class="::vm.isActiveItem(item) ? {'active' : vm.isActiveItem(item) === true} : undefined">
+            <a class="waves-effect waves-teal" href={{::item.href}}>
+                {{::item.name}}
+                <i class="material-icons left">{{::item.icon}}</i>
+            </a>
+        </li>
+    </ul>
+
+    <div class="sidebar-right" style="color: white; float: right; padding-right: 16px; position: relative; top: 40%;">
+        <i class="material-icons">chevron_right</i>
+    </div>
+</div>

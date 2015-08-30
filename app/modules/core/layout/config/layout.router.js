@@ -41,10 +41,10 @@
                 templateUrl: 'modules/core/layout/views/container_header_sidebar.html'
             },
             'header@container_header_sidebar': {
-                template: 'HEADER-DEFAULT'
+                template: '<navbar></navbar>'
             },
             'sidebar@container_header_sidebar': {
-                template: 'SIDEBAR-DEFAULT'
+                template: '<sidebar></sidebar>'
             }  
           }
         };

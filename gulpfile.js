@@ -48,9 +48,9 @@ var paths = {
   bower: 'app/assets/bower/**',
   js: ['app/modules/app.js', 'app/modules/*/*.module.js', 'app/modules/**/*.js', '!app/modules/**/tests/**/*.js'],
   views: ['app/modules/**/views/**/*.html'], 
-  sass: ['app/modules/main/assets/sass/**/*.scss', 'app/modules/**/assets/sass/**/*.scss', '!app/modules/**/assets/sass/**/_*.scss'], 
+  sass: ['app/modules/main/assets/sass/**/*.scss', 'app/assets/sass/**/*.scss', 'app/modules/**/assets/sass/**/*.scss', '!app/modules/**/assets/sass/**/_*.scss'], 
   images: 'app/modules/**/img/**',
-  fonts: 'app/modules/**/fonts/**',
+  fonts: ['app/assets/font/**'],
   json: 'app/modules/**/json/**'
 };
 
@@ -138,8 +138,7 @@ gulp.task('bower', function () {
   return gulp.src(paths.indexHtml)
     .pipe(wiredep({
       exclude: [ 
-        'app/assets/bower/bootstrap/dist/css/bootstrap.css', 
-        'app/assets/bower/font-awesome/css/font-awesome.css'
+        'app/assets/bower/materialize/bin/materialize.css'
       ]
     }))
     .pipe(gulp.dest(paths.app))
