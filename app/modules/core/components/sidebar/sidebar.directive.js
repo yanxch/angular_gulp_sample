@@ -18,22 +18,18 @@
         function SidebarController($location) {
             var vm = this;
             
-            vm.items = items;
             vm.isActiveItem = isActiveItem;
-
-            function items() {
-                return [
+            vm.items = [
                     {
-                        name: 'Dokumentklasse anlegen',
-                        href: '#/createDocumentClass',
-                        icon: 'tab'
+                        name: 'User Management',
+                        href: '#/entry1',
+                        icon: 'group'
                     },
                     {
-                        name: 'Dokumentklasse suchen',
-                        href: '#/searchDocumentClass',
-                        icon: 'search'
+                        name: 'Controlling',
+                        href: '#/entry2',
+                        icon: 'local_florist'
                     }];
-            }
 
             function isActiveItem(item) {
                 if (item.href === ('#' + $location.url())) {
