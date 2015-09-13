@@ -21,9 +21,9 @@
       
       function containerHeaderLayout() {
         return {
+          abstract: true,
           views: {
             '': {
-                abstract: true,
                 templateUrl: 'modules/core/layout/views/container_header.html',
             },
             'header@container_header': {
@@ -35,9 +35,9 @@
       
       function containerHeaderSidebarLayout() { 
         return {
+          abstract: true,
           views: {
             '': {
-                abstract: true,
                 templateUrl: 'modules/core/layout/views/container_header_sidebar.html'
             },
             'header@container_header_sidebar': {
